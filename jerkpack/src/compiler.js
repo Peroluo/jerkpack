@@ -56,7 +56,7 @@ class Compiler {
   async run() {
     const startTime = performance.nodeTiming.duration
     // 在特定的生命周期发布消息，触发对应的订阅事件
-    this.hooks.beforeRun.callAsync(this)
+    this.hooks.beforeRun(this)
     this.compilation = new Compilation({
       root: this.root,
       entry: this.entryPath,
@@ -115,8 +115,8 @@ class Compiler {
           console.log('[Success] 编译成功')
         }
       });
-      // 将缓存信息写入缓存文件
-      fs.writeFileSync(resolve(this.distPath, 'manifest.json'), JSON.stringify(assets, null, 2))
+    //   将缓存信息写入缓存文件
+      fs.writeFileSync(resolve(this.distPath, 'manifest.json'), JSON.stringify(this.assets, null, 2))
     }
   }
 }

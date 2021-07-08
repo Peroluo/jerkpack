@@ -64,6 +64,7 @@ module.exports = class Compilation {
     for(let i=0;i<relyInModule.length;i++) {
       await this.moduleWalker(relyInModule[i], path.dirname(relyInModule[i]))
     }
+    console.log(this.assets)
   }
 
   // 生成源代码

@@ -3352,21 +3352,6 @@ exports['default'] = index;`
              eval(
                  `"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _nervjs = _interopRequireDefault(__webpack_require__("./node_modules/nervjs/index.js"));
-
-var _Switch = _interopRequireDefault(__webpack_require__("./src/Switch.js"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
@@ -3381,6 +3366,21 @@ function _typeof(obj) {
   }
 
   return _typeof(obj);
+}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _nervjs = _interopRequireDefault(__webpack_require__("./node_modules/nervjs/index.js"));
+
+var _Switch = _interopRequireDefault(__webpack_require__("./src/Switch.js"));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
 }
 
 function _classCallCheck(instance, Constructor) {
@@ -3470,7 +3470,7 @@ function _isNativeReflectConstruct() {
   if (typeof Proxy === "function") return true;
 
   try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
     return true;
   } catch (e) {
     return false;
